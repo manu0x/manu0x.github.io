@@ -28,7 +28,7 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { color: inherit; text-decoration:  underline; }
 
     .container {
       width: min(var(--maxw), calc(100% - 2rem));
@@ -77,6 +77,19 @@
       align-items: center;
     }
 
+    .hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+   }
+
+  .hero-photo img {
+    width: 260px;
+    max-width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
     .eyebrow {
       display: inline-block;
       padding: 0.35rem 0.7rem;
@@ -214,32 +227,29 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=DP_WUF0AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero" id="home">
-      <div>
-        <div class="eyebrow">Personal profile · Research portfolio</div>
-        <h1>Hi, I’m Manu.</h1>
-        <p class="lead">
-          I work at the intersection of research, engineering, and problem-solving. This site is a clean home for my background, research interests, selected projects, and contact details.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Contact Me</a>
-        </div>
-      </div>
+<section class="hero" id="home">
+  <div>
+    <h1>Hi there, I’m Manvendra (Manu).</h1>
+    <p class="lead">
+      I am a researcher working at the intersection of Physics, Numerical Methods and Scientific Machine Learning.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+  </div>
 
-      <aside class="hero-card">
-        <h3>Quick Info</h3>
-        <div class="stat"><span class="muted">Role</span><strong>Researcher / Engineer</strong></div>
-        <div class="stat"><span class="muted">Focus</span><strong>Quantum, optics, computation</strong></div>
-        <div class="stat"><span class="muted">Current theme</span><strong>Research + technical projects</strong></div>
-      </aside>
-    </section>
+  <div class="hero-photo">
+    <img src="images/photo.jpg" alt="Photo of Manvendra Manu">
+  </div>
+</section>
 
     <section id="about">
       <h2 class="section-title">About</h2>
@@ -247,39 +257,45 @@
         <div class="card">
           <h3>Background</h3>
           <p class="muted">
-            Write a short introduction here: who you are, what you work on, and the kind of problems that interest you most. This section should sound personal, clear, and professional.
+            I obtained my Ph.D. in Cosmology from IISER Mohali under the guidance of <a href="https://web.iisermohali.ac.in/Faculty/jasjeet/index.html" target="_blank" rel="noreferrer">Prof. Jasjeet S. Bagla</a>.
+            After that I had worked as Postdoctoral researcher at Ahmedabad University. Currently I am a postdoc at KAUST in David Ketcheson's <a href="https://numerics.kaust.edu.sa"target="_blank" rel="noreferrer">Numerical Maths group</a>.
           </p>
           <p class="muted">
-            You can use it to blend your academic background with practical engineering, software, experimentation, or entrepreneurship.
+            
           </p>
         </div>
         <div class="card">
           <h3>Research Interests</h3>
           <ul class="list">
-            <li>Neutral atom quantum computing</li>
-            <li>Optics and photonics</li>
-            <li>Scientific computing and simulation</li>
-            <li>Applied machine learning</li>
+            <li>Numerical Methods for PDEs</li>
+            <li>Cosmology</li>
+            <li>Scientific Machine Learning</li>
+            <li>Physics-informed ML</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Selected Projects</h2>
+      <h2 class="section-title">Recent Projects</h2>
       <div class="grid">
         <article class="card">
-          <h3>Research Project One</h3>
-          <p class="muted">Add a short summary of the question, your approach, and the main outcome.</p>
+          <h3>Higher-order Energy-conserving Methods for Schrodinger-Poisson Equations</h3>
+          <p class="muted">We combined Implicit-Explicit (ImEx) Runge Kutta methods with projection based relaxation to conserve mass and maintain energy balance( or conservation).
+            <a href="https://arxiv.org/abs/2604.05940" target="_blank" rel="noreferrer">arXiv link</a>
+
+
+
+          </p>
         </article>
         <article class="card">
-          <h3>Technical Project Two</h3>
-          <p class="muted">Use this for code, simulations, experiments, product prototypes, or engineering work.</p>
+          <h3>Integral based PINNs</h3>
+          <p class="muted">We use conservation-based loss instead of usual strong form of hyperbolic PDEs to enhance learning of solutions with shocks.
+            The work was presented at <a  href="https://openreview.net/group?id=ICLR.cc/2024/Workshop/AI4DiffEqtnsInSci" target="_blank" rel="noreferrer">ICLR 2024 Workshop on AI4DifferentialEquations In Science</a>
+            You can read the article <a  href="https://openreview.net/pdf?id=Uuu6HWe6dF" target="_blank" rel="noreferrer">here</a>.
+          </p>
         </article>
-        <article class="card">
-          <h3>Publication / Portfolio Item</h3>
-          <p class="muted">Link papers, posters, GitHub repositories, presentations, demos, or blog posts here.</p>
-        </article>
+        
       </div>
     </section>
 
@@ -287,12 +303,24 @@
       <h2 class="section-title">Contact</h2>
       <div class="card">
         <p class="muted">
-          Add your email, GitHub, LinkedIn, Google Scholar, CV, or other professional links here.
+        <div class="cta-row">
+  <a class="btn" href="mailto:rescue11080@gmail.com">Email Me</a>
+  <div class="btn" onclick="copyEmail()" style="cursor:pointer;">Copy Email</div>
+</div>
+
+<p id="emailText" class="muted">rescue11080@gmail.com</p>
+
+<script>
+  function copyEmail() {
+    const email = document.getElementById("emailText").innerText;
+    navigator.clipboard.writeText(email);
+  }
+</script>
         </p>
         <div class="cta-row">
           <a class="btn" href="https://github.com/manu0x" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="#">LinkedIn</a>
-          <a class="btn" href="#">Google Scholar</a>
+          <a class="btn" href="https://www.linkedin.com/in/manvendra-rajvanshi/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&user=DP_WUF0AAAAJ&view_op=list_works&sortby=pubdate"target="_blank" rel="noreferrer" >Google Scholar</a>
         </div>
       </div>
     </section>
